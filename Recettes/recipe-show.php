@@ -38,8 +38,8 @@ if(isset($_GET['id']) && $_GET['id']!=null){
         <nav>
             <ul>
             <li><a href="./recipe-index.php">Accueil</a></li>
-            <li><a href="./member-index.php">Membres</a></li>
-            <li><a href="./member-create.php">S'inscrire</a></li>  
+            <li><a href="../Membre/member-index.php">Membres</a></li>
+            <li><a href="../Membre/member-create.php">S'inscrire</a></li>  
             </ul>
         </nav>
     </header>
@@ -62,7 +62,7 @@ if(isset($_GET['id']) && $_GET['id']!=null){
             </div>    
         </div>
         <a href="recipe-edit.php?id=<?= $id;?>" class="bouton">Modifier la recette</a>
-        <a href="comment-create.php?id=<?= $id;?>" class="bouton">Commenter la recette</a>
+        <a href="../Membre/comment-create.php" class="bouton">Commenter la recette</a>
         <form action="recipe-delete.php" method="post">
             <input type="hidden" name="id" value="<?= $id;?>">
             <input type="submit" class="bouton" value="Supprimer la recette"></input>

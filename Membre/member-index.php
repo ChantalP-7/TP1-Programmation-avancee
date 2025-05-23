@@ -23,9 +23,8 @@ $select  = $crud -> select('membre');
     <h1 class="titre">Les adeptes de la Food Vegan🥑</h1>
     <nav>
         <ul>
-            <li><a href="../recipe-index.php">Accueil</a></li>
+            <li><a href="../Recettes/recipe-index.php">Accueil</a></li>
             <li><a href="./member-index.php">Membres</a></li>
-            <li><a href="../categorie.php">Catégories</a></li>
             <li><a href="./member-create.php">S'inscrire</a></li> 
         </ul>
     </nav>    
@@ -50,7 +49,7 @@ $select  = $crud -> select('membre');
                     <td><?= $row['prenom'] ?> </td>
                     <td><?= $row['nom'] ?> </td>
                     <td><?= $row['pseudonyme'] ?></td>
-                        <td><a href="member-show.php?id=<?= $row['id']?>"><?= $row['prenom']?></a></td>
+                        <td><a href="./member-show.php?id=<?= $row['id']?>"><?= $row['prenom']?></a></td>
                     </tr>
                     <?php
             }
@@ -58,7 +57,7 @@ $select  = $crud -> select('membre');
             </table>
          
         <br><br>
-        <a href="member-create.php" class="btn">Nouveau membre</a>
+        <a href="./member-create.php" class="Bouton">Nouveau membre</a>
         </div>
     </main>
 </body>

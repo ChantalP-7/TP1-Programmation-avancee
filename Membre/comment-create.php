@@ -1,19 +1,8 @@
 <?php
-    if(isset($_GET['id']) && $_GET['id']!=null){
-        require_once('../Classe/CRUD.php');
-        $id = $_GET['id'];
-        $crud = new CRUD;
-        $selectId = $crud->selectId('recette', $id);
-        if($selectId){
-            extract($selectId);
-            $membre = $crud->selectId('membre', $idMembre);
-            $pseudo = $membre['pseudonyme'];
-        }else{
-            header('location:recipe-index.php');
-        }
-    }else{
-        header('location:recipe-index.php');
-    }
+   require_once('../Classe/CRUD.php');
+   $crud = new CRUD;
+   $recettes  = $crud -> select('recette');
+
 ?>
 
 
@@ -30,10 +19,9 @@
     <h1 class="titre">Les adeptes de la Food Vegan🥑</h1>
     <nav>
         <ul>
-            <li><a href="../recipe-index.php">Accueil</a></li>
-            <li><a href="./member.php">Membres</a></li>
-            <li><a href="../categorie.php">Catégories</a></li>
-            <li><a href="./member-create.php">S'inscrire</a></li>  
+            <li><a href="../Recettes/recipe-index.php">Accueil</a></li>
+            <li><a href="./member-index.php">Membres</a></li>
+            <li><a href="./member-create.php">S'inscrire</a></li> 
         </ul>
     </nav>    
 </header>
@@ -41,21 +29,26 @@
     <div class="hero"></div> 
     <div class="container">
         <h1 class="center">Je commente</h1>
-        <form action="comment-store.php" method="post"> 
-            <label for="">
-                <span><?= $selectId['titre'] ?></span>
-            </label>
-            <label>commentaire
-            <textarea></textarea>
-                <input type="text" name="prenom">
-            </label>
-            <label>Date
-                <input type="date" name="nom">
-            </label>
+        <form action="./comment-store.php" method="post"> 
+            <label for="">Recettes</label>
+            <select required name="idRecette">
+                    <option value="">Choisis la recette</option>
+                    <?php foreach($recettes as $recette) { ?>
+                    <option value="<?=$recette['id']?>"><?=$recette['titre'];?></option>
+                    <?php }?>
+                </select>           
+            <label>commentaire</label>
+            <textarea name="texte"></textarea>
+            <label>Pointage</label>
+            <textarea name="note" ></textarea>
+            <label>Date</label>
+                <input type="date" name="date">
             <label>Pseudo
-                <input type="text" name="pseudonyme" value="<?= $pseudo ?>">
-            </label>
-           
+                <input type="text" name="pseudo">
+            </label>           
+            <label>Ton id
+                <input type="number" name="idMembre" value="idMembre">
+            </label>           
             <input type="submit" class="bouton" value="Enregistrer">
         </form>
     </div>

@@ -11,7 +11,7 @@ $crud = new CRUD;
 
 $insert = $crud->insert('commentaire', $_POST);
 
-header('location:./recipe-show.php?id='.$insert);
+header('location:.Recettes/recipe-index');
 
 
 

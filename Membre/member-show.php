@@ -21,10 +21,9 @@ if(isset($_GET['id']) && $_GET['id']!=null){
     <h1 class="titre">Les adeptes de la Food Vegan🥑</h1>
     <nav>
         <ul>
-            <li><a href="../recipe-index.php">Accueil</a></li>
-            <li><a href="./member-index.php">Accueil</a></li>
-            <li><a href="../categorie.php">Catégories</a></li>
-            <li><a href="./member-create.php">S'inscrire</a></li>  
+            <li><a href="../Recettes/recipe-index.php">Accueil</a></li>
+            <li><a href="./member-index.php">Membres</a></li>
+            <li><a href="./member-create.php">S'inscrire</a></li> 
         </ul>
     </nav>    
 </header>
@@ -39,12 +38,12 @@ if(isset($_GET['id']) && $_GET['id']!=null){
             <p>Téléphone: <?= $selectId['telephone']; ?></p>
             <p>Courriel: <?= $selectId['courriel']; ?></p>
             <div class="trois-boutons">
-                <a href="member-edit.php?id=<?= $id;?>" class="bouton">Modifier mon profil</a>
-                <form class="no-border tiny-form" action="member-delete.php" method="post">
+                <a href="./member-edit.php?id=<?= $id;?>" class="bouton">Modifier mon profil</a>
+                <form class="no-border tiny-form" action="./member-delete.php" method="post">
                     <input type="hidden" name="id" value="<?= $id;?>">
                     <button type="submit" class="bouton">Supprimer mon profil</button>
                 </form>
-                <a class="bouton">Ajoute une recette</a>
+                <a href="../Recettes/recipe-create.php" class="bouton">Ajoute une recette</a>
             </div>
         </div>
     </main>

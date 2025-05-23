@@ -11,10 +11,9 @@
     <h1 class="titre">Les adeptes de la Food Vegan🥑</h1>
     <nav>
         <ul>
-            <li><a href="../recipe-index.php">Accueil</a></li>
-            <li><a href="./recipe-all.php">Recettes</a></li>
-            <li><a href="../categorie.php">Catégories</a></li>
-            <li><a href="./member-create.php">S'inscrire</a></li>  
+        <li><a href="../Recettes/recipe-index.php">Accueil</a></li>
+            <li><a href="./member-index.php">Membres</a></li>
+            <li><a href="./member-create.php">S'inscrire</a></li> 
         </ul>
     </nav>    
 </header>
@@ -22,7 +21,7 @@
     <div class="hero"></div> 
     <div class="container">
         <h1 class="center">Je m'inscris</h1>
-        <form action="member-store.php" method="post"> 
+        <form action="./member-store.php" method="post"> 
             <label>Prénom
                 <input type="text" name="prenom">
             </label>

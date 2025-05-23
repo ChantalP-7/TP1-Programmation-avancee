@@ -25,10 +25,9 @@ if(isset($_GET['id']) && $_GET['id']!=null ){
     <h1 class="titre">Les adeptes de la Food Vegan🥑</h1>
     <nav>
         <ul>
-            <li><a href="../recipe-index.php">Accueil</a></li>
-            <li><a href="./member-index.php">membres</a></li>
-            <li><a href="../categorie.php">Catégories</a></li>
-            <li><a href="./member-create.php">S'inscrire</a></li>  
+            <li><a href="../Recettes/recipe-index.php">Accueil</a></li>
+            <li><a href="./member-index.php">Membres</a></li>
+            <li><a href="./member-create.php">S'inscrire</a></li> 
         </ul>
     </nav>    
 </header>
@@ -36,7 +35,7 @@ if(isset($_GET['id']) && $_GET['id']!=null ){
     <div class="hero"></div> 
     <div>
         <h2 class="center">Mise à jour du profil</h2>
-        <form action="member-update.php" method="post">
+        <form action="./member-update.php" method="post">
             <label for="prenom">Prénom</label>
                 <input type="text" id="prenom" name="prenom" value="<?= $select['prenom']  ?>">
             <label for="nom">Nom</label>            

@@ -18,10 +18,9 @@
     <h1 class="titre">Les adeptes de la Food Vegan🥑</h1>
     <nav>
         <ul>
-            <li><a href="./recipe-index.php">Accueil</a></li>
-            <li><a href="../member-index.php">Accueil</a></li>
-            <li><a href="./categorie.php">Catégories</a></li>
-            <li><a href="../member-create.php">S'inscrire</a></li> 
+        <li><a href="./recipe-index.php">Accueil</a></li>
+            <li><a href="../Membre/member-index.php">Membres</a></li>
+            <li><a href="../Membre/member-create.php">S'inscrire</a></li> 
         </ul>
     </nav>    
 </header>

@@ -22,10 +22,9 @@ if(isset($_GET['id']) && $_GET['id']!=null){
     <h1 class="titre">Les adeptes de la Food Vegan🥑</h1>
     <nav>
         <ul>
-            <li><a href="../recipe-index.php">Accueil</a></li>
-            <li><a href="./member-index.php">Accueil</a></li>
-            <li><a href="../categorie.php">Catégories</a></li>
-            <li><a href="./member-create.php">S'inscrire</a></li>  
+            <li><a href="../Recettes/recipe-index.php">Accueil</a></li>
+            <li><a href="./member-index.php">Membres</a></li>
+            <li><a href="./member-create.php">S'inscrire</a></li> 
         </ul>
     </nav>    
 </header>
@@ -38,8 +37,8 @@ if(isset($_GET['id']) && $_GET['id']!=null){
             <p>Nom: <?= $selectId['note']; ?></p>
             <p>Pseudonyme: <?= $selectId['date']; ?></p>
             <div class="trois-boutons">
-                <a href="comment-edit.php?id=<?= $id;?>" class="bouton">Modifier mon commentaire</a>
-                <form class="no-border tiny-form" action="member-delete.php" method="post">
+                <a href="./comment-edit.php?= $id;?>" class="bouton">Modifier mon commentaire</a>
+                <form class="no-border tiny-form" action="./member-delete.php" method="post">
                     <input type="hidden" name="id" value="<?= $id;?>">
                     <button type="submit" class="bouton">Supprimer mon commentaire</button>
                 </form>
