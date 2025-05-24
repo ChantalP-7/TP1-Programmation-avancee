@@ -18,9 +18,10 @@
     <h1 class="titre">Les adeptes de la Food Vegan🥑</h1>
     <nav>
         <ul>
-        <li><a href="./recipe-index.php">Accueil</a></li>
+            <li><a href="./recipe-index.php">Recettes</a></li>
+            <li><a href="../Membre/comment-index.php">Commentaires</a></li>
             <li><a href="../Membre/member-index.php">Membres</a></li>
-            <li><a href="../Membre/member-create.php">S'inscrire</a></li> 
+            <li><a href="../Membre/member-create.php">S'inscrire</a></li>  
         </ul>
     </nav>    
 </header>
@@ -32,7 +33,7 @@
                 <select required name="idCategorie">
                     <option value="">Choisis la catégorie</option>
                     <?php foreach($categories as $categorie) { ?>
-                    <option value="<?=$categorie['id']?>"><?=$categorie['categorie'];?></option>
+                    <option value="<?=$categorie['id']?>" required><?=$categorie['categorie'];?></option>
                     <?php }?>
                 </select> 
             <label for="titre">titre</label>
@@ -42,7 +43,7 @@
             <label for="instruction">Instructions</label>
                 <textarea class="text-area" name="instruction" id="instruction" ></textarea>                         
             <label for="date">date de création</label>
-                <input type="date" id="date" name="date" required>                        
+                <input type="dateCreation" id="dateCreation" name="dateCreation" required>                        
             <label for="idMembre">Ton id</label>
                 <input type="number" id="idMembre" name="idMembre" required>                             
             <input type="submit" class="bouton" value="Enregistrer">

@@ -4,9 +4,10 @@ require_once('../Classe/CRUD.php');
 
 $crud = new CRUD;
 
-$select  = $crud -> select('membre');
-//print_r($select);
-
+$select  = $crud -> select('commentaire');
+$selectRecipe  = $crud -> select('recette');
+extract($selectRecipe);
+$idRecette = $selectRecipe['id' == $select['idRecette']];
 
 ?>
 
@@ -32,14 +33,16 @@ $select  = $crud -> select('membre');
 </header>
     <main>
     <div class="hero"></div> 
-     <h1>Membre</h1>
+     <h1>Les commentaires</h1>
      <div class="grille">
         <table>
             <tr>
-                <th>Prénom</th>            
-                <th>Nom</th>            
+                <th>Recette</th>            
+                <th>Commentaire</th>            
+                <th>Étoiles</th>            
                 <th>Surnom</th> 
-                <th>Profil</th>           
+                <th>Date</th>
+                <th>Voir la recette</th>          
                 
             </tr>
             <?php
@@ -47,10 +50,12 @@ $select  = $crud -> select('membre');
 
                     ?>
                     <tr>
-                    <td><?= $row['prenom'] ?> </td>
-                    <td><?= $row['nom'] ?> </td>
-                    <td><?= $row['pseudonyme'] ?></td>
-                        <td><a href="./member-show.php?id=<?= $row['id']?>"><?= $row['prenom']?></a></td>
+                    <td><?= $row['titre'] ?> </td>
+                    <td><?= $row['texte'] ?> </td>
+                    <td><?= $row['note'] ?> </td>
+                    <td><?= $row['pseudo'] ?></td>
+                    <td><?= $row['dateCommentaire'] ?></td>
+                        <td><a href="../Recettes/recipe-show.php?id="<?= $idRecette?>><?= $row['titre']?></a></td>
                     </tr>
                     <?php
             }
@@ -58,7 +63,7 @@ $select  = $crud -> select('membre');
             </table>
          
         <br><br>
-        <a class="bouton" href="./member-create.php">Je m'inscris</a>
+        <a class="bouton" href="./comment-create.php">Je commente</a>
         </div>
     </main>
 </body>

@@ -5,7 +5,7 @@
     $update = $crud->update('recette', $_POST);
     
     if($update){
-        header('location:recipe-index.php');
+        header('location:./recipe-show.php?id='.$update['id']);
     }else{
         echo "error";
     }

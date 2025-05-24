@@ -11,6 +11,6 @@ $crud = new CRUD;
 
 $insert = $crud->insert('recette', $_POST);
 
-header('location:recipe-show.php?id='.$insert);
+header('location:./recipe-show.php?id='.$insert);
 
 ?>

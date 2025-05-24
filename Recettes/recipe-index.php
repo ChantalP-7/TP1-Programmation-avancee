@@ -21,9 +21,10 @@ $recipes  = $crud -> select('recette');
     <h1 class="titre">Les adeptes de la Food Vegan🥑</h1>
     <nav>
         <ul>
-            <li><a href="./recipe-index.php">Accueil</a></li>
-            <li><a href="../Membre/member-index.php">Membres</a></li>
-            <li><a href="../Membre/member-create.php">S'inscrire</a></li> 
+        <li><a href="./recipe-index.php">Recettes</a></li>
+            <li><a href="../Membre/comment-index.php">Commentaires</a></li>
+            <li><a href="../Membre/comment-index.php">Membres</a></li>
+            <li><a href="../Membre/member-create.php">S'inscrire</a></li>  
         </ul>
     </nav>    
 </header>
@@ -47,7 +48,7 @@ $recipes  = $crud -> select('recette');
                 <tr>            
                     <td class="tiers"><?= $recipe['titre'];?></td>
                     <td class="main"><?= mb_strimwidth($recipe['ingredient'], 0, 200, "...");?> <a href="./recipe-show.php?id=<?= $recipe['id']?>">Voir la recette</a></td>                
-                    <td class="tiers"><?= $recipe['date'];?></td>
+                    <td class="tiers"><?= $recipe['dateCreation'];?></td>
                 </tr>
                 <?php
                 }

@@ -6,18 +6,14 @@ Class CRUD extends PDO {
     }
 
     public function select($table, $field = 'id', $order = 'ASC') {
-        $sql = "SELECT * FROM $table
-        /*JOIN categorie ON categorie.id = $table.idCategorie
-        left outer JOIN membre ON membre.id = $table.idMembre*/
+        $sql = "SELECT *, ISNULL(NULL) FROM $table        
         ORDER BY $field $order";
         $stmt = $this->query($sql);
         return $stmt->fetchALL();  
     }
 
     public function selectNom($table, $field = 'categorie', $order = 'ASC') {
-        $sql = "SELECT * FROM $table
-        /*JOIN categorie ON categorie.id = $table.idCategorie
-        left outer JOIN membre ON membre.id = $table.idMembre*/
+        $sql = "SELECT * FROM $table        
         ORDER BY $field $order";
         $stmt = $this->query($sql);
         return $stmt->fetchALL();  
@@ -37,10 +33,6 @@ Class CRUD extends PDO {
     }
     
     public function insert($table, $data){
-
-        //Array ( [name] => Peter [address] => Maisonneuve [phone] => 54654 [zip_code] => h1h1h1 [email] => peter@gmail.com ) INSERT INTO client
-        //INSERT INTO client (name, address, phone, zip_code, email) VALUES (:name, :address, :phone, :zip_code, :email)
-        //INSERT INTO client (name, address, phone, zip_code, email) VALUES (name, :address, :phone, :zip_code, :email)
 
         $fieldName = implode(', ', array_keys($data));
         $fieldValue = ":".implode(', :', array_keys($data));
@@ -69,15 +61,16 @@ Class CRUD extends PDO {
         $count = $stmt->rowCount();
         if($count==1){
             header('Location: ' . $_SERVER['HTTP_REFERER']);
-        }else{
-            print_r($stmt->errorInfo());
+        }else{            
+            echo '<script language="javascript">';
+            echo 'alert("Aucune modification de faite")';
+            echo '</script>';
         }
     }
 
 
     public function delete($table, $value, $url, $field='id'){
         $sql = "DELETE FROM $table WHERE $field = :$field";
-        //return $sql;
         $stmt = $this->prepare($sql);
         $stmt->bindValue(":$field", $value);
         $stmt->execute();
@@ -89,8 +82,6 @@ Class CRUD extends PDO {
         }
         
     }
-
-
 }
 
 

@@ -150,7 +150,7 @@ main, header {
 
 .grille {
     overflow-x:auto;
-    margin: 20px auto 60px auto;
+    margin: 50px auto 60px auto;
     padding: 20px;
     max-width: 1000px;
 }
@@ -247,13 +247,13 @@ output {
 .bouton 
 {   
     font-size: 20px;
-    padding: 10px 15px;
+    padding: 10px 20px;
     max-width: 200px;
     border-radius: 25px;
     display: block;
     background-color: rgb(1, 47, 107);
     color: white;
-    margin: 50px auto;
+    margin: 50px auto 20px auto;
     text-decoration: none;
     text-align: center;
     &:hover {
@@ -323,7 +323,7 @@ hr {
 }
 
 .tiny-form {
-    max-width: 300px;
+    max-width: 280px;
     padding: 0;
 }
 

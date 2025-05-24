@@ -14,7 +14,7 @@ if(isset($_GET['id']) && $_GET['id']!=null ){
         $categorie = $crud->selectId('categorie', $idCategorie);
         $nomCategorie = $categorie['categorie'];
         $auteur = $crud->selectId('membre', $idMembre);
-        $nomAuteur = $auteur['pseudonyme'];
+        $nomAuteur = $auteur['prenom'];
         
     } else {
         header('location:recipe-index.php');
@@ -38,9 +38,10 @@ if(isset($_GET['id']) && $_GET['id']!=null ){
     <h1 class="titre">Les adeptes de la Food Vegan🥑</h1>
     <nav>
         <ul>
-        <li><a href="./recipe-index.php">Accueil</a></li>
+            <li><a href="./recipe-index.php">Recettes</a></li>
+            <li><a href="../Membre/comment-index.php">Commentaires</a></li>
             <li><a href="../Membre/member-index.php">Membres</a></li>
-            <li><a href="../Membre/member-create.php">S'inscrire</a></li> 
+            <li><a href="../Membre/member-create.php">S'inscrire</a></li>  
         </ul>
     </nav>    
 </header>
@@ -55,12 +56,13 @@ if(isset($_GET['id']) && $_GET['id']!=null ){
                 <textarea class="text-area"  id="ingredient" name="ingredient" rows="5" ><?= $selectId['ingredient']  ?></textarea>
             <label for="instruction">Instructions</label>
                 <textarea class="text-area" id="instruction" name="instruction" rows="5"><?= $selectId['instruction']  ?></textarea>
-            <label for="date">Date de rédaction</label>
-                <input type="text" id="date" name="date" value="<?= $selectId['date']  ?>">
             <label for="categorie">Catégorie</label>
-                <input class="verte" type="text" readonly name="categorie" value="<?=$nomCategorie ?>">
-            <label for="pseudonyme">Nom auteur.e</label>
-                <input type="text" name="pseudonyme" value="<?=$nomAuteur ?>">
+                <input class="verte" type="text" name="categorie" value="<?=$nomCategorie ?>">
+            <label for="prenom">Nom auteur.e</label>
+                <input type="text" name="prenom" value="<?=$nomAuteur ?>">
+            <label for="dateCreation">Date de rédaction</label>
+                <input type="text" id="dateCreation" name="dateCreation" value="<?= $selectId['dateCreation']  ?>"> 
+                <input type="hidden" name="id" value="<?= $selectId['id']  ?>">           
                 <input type="hidden" name="idMembre" value="<?= $selectId['idMembre']  ?>">           
                 <input type="hidden" name="idCategorie" value="<?= $selectId['idCategorie']  ?>">
                 <input type="submit" class="bouton" value="Enregistrer">

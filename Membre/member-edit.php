@@ -8,7 +8,7 @@ if(isset($_GET['id']) && $_GET['id']!=null ){
     $crud = new CRUD;
     $select = $crud->selectId('membre', $id);
 }else{
-    header('location:member-index.php');
+    header('location:./member-index.php');
 }
     
 ?>
@@ -25,7 +25,8 @@ if(isset($_GET['id']) && $_GET['id']!=null ){
     <h1 class="titre">Les adeptes de la Food Vegan🥑</h1>
     <nav>
         <ul>
-            <li><a href="../Recettes/recipe-index.php">Accueil</a></li>
+        <li><a href="../Recettes/recipe-index.php">Recettes</a></li>
+            <li><a href="./comment-index.php">Commentaires</a></li>
             <li><a href="./member-index.php">Membres</a></li>
             <li><a href="./member-create.php">S'inscrire</a></li> 
         </ul>
